@@ -32,10 +32,6 @@ if (!file_exists($configFile)) {
     }
 }
 
-if ($config['SETTINGS']['BOT_TOKEN'] === '8717673663:AAHjYB3DVh2EqZN_ZOOC3JcV4MC_V85UpXw') {
-    die("\n\n[!] INCORRECT BOT TOKEN! [!]\n\n");
-}
-
 // Configuration
 $botToken = $config['SETTINGS']['BOT_TOKEN'];
 $website = "https://api.telegram.org/bot" . $botToken;
