@@ -1,4 +1,5 @@
 <?php
+file_put_contents("debug.txt", date("c") . " HIT\n", FILE_APPEND);
 /*
 $ TEAM    : https://instagram.com/darkxcode_
 $ AUTHOR  : https://t.me/zlaxtert 
