@@ -54,21 +54,25 @@ function handleSkCommand($message, $chatId, $message_id) {
 
 
 function sendMessage($chatId, $message, $message_id) {
-    global $website;
-    $url = $website . "/sendMessage?chat_id=" . $chatId . "&text=" . urlencode($message) . "&reply_to_message_id=" . $message_id . "&parse_mode=HTML";
-    file_get_contents($url);
-}
+    $token = "DEIN_TOKEN";
+    
+    $url = "https://api.telegram.org/bot$token/sendMessage";
 
-// Command Handlers
+    $data = [
+        'chat_id' => $chatId,
+        'text' => $message,
+        'parse_mode' => 'HTML'
+    ];
 
-function handleUnknownCommand($chatId, $message_id) {
-    $msg = "<b>!! FUCK OFF !!</b> %0A%0A I dont know bruh";
-    sendMessage($chatId, $msg, $message_id);
-}
+    $options = [
+        'http' => [
+            'method'  => 'POST',
+            'header'  => "Content-Type: application/x-www-form-urlencoded",
+            'content' => http_build_query($data)
+        ]
+    ];
 
-function handleStartCommand($chatId, $message_id) {
-    $msg = "<b>Hello there!!%0AType /menu to know all commands!!</b>";
-    sendMessage($chatId, $msg, $message_id);
+    file_get_contents($url, false, stream_context_create($options));
 }
 
 function handleMenuCommand($chatId, $message_id) {
