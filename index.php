@@ -41,13 +41,18 @@ $website = "https://api.telegram.org/bot" . $botToken;
 error_reporting(1);
 
 // Get and parse the update
-$update = json_decode(file_get_contents('php://input'), true);
+$update = json_decode(file_get_contents("php://input"), true);
 
-// Validate update structure
-if (!isset($update['message']['chat']['id'])) {
+if (!$update) {
     exit;
 }
 
+$chatId = $update["message"]["chat"]["id"] ?? null;
+$text = $update["message"]["text"] ?? null;
+
+if (!$chatId) {
+    exit;
+}
 
 // Extract message data with null coalescing for safety
 $message = $update['message']['text'] ?? '';
