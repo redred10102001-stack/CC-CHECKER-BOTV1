@@ -56,7 +56,6 @@ if (!$chatId) {
 
 // Extract message data with null coalescing for safety
 $message = $update['message']['text'] ?? '';
-$chatId = $update['message']['chat']['id'] ?? '';
 $userId = $update['message']['from']['id'] ?? '';
 $firstname = $update['message']['from']['first_name'] ?? '';
 $username = $update['message']['from']['username'] ?? '';
