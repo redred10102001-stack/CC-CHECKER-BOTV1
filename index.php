@@ -44,9 +44,10 @@ error_reporting(1);
 $update = json_decode(file_get_contents('php://input'), true);
 
 // Validate update structure
-if (!isset($update['message'])) {
+if (!isset($update['message']['chat']['id'])) {
     exit;
 }
+
 
 // Extract message data with null coalescing for safety
 $message = $update['message']['text'] ?? '';
