@@ -41,7 +41,7 @@ $website = "https://api.telegram.org/bot" . $botToken;
 error_reporting(1);
 
 // Get and parse the update
-$update = json_decode(file_get_contents("php://input"), true);
+$update = json_decode(file_get_contents('php://input'), true);
 
 if (!$update) {
     exit;
