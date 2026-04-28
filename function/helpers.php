@@ -54,7 +54,7 @@ function handleSkCommand($message, $chatId, $message_id) {
 
 
 function sendMessage($chatId, $message, $message_id) {
-    $token = "DEIN_TOKEN";
+    $token = "8717673663:AAHjYB3DVh2EqZN_ZOOC3JcV4MC_V85UpXw";
     
     $url = "https://api.telegram.org/bot$token/sendMessage";
 
