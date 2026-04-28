@@ -32,7 +32,7 @@ if (!file_exists($configFile)) {
     }
 }
 
-if ($config['SETTINGS']['BOT_TOKEN'] === 'PASTE YOUR BOT TOKEN HERE') {
+if ($config['SETTINGS']['BOT_TOKEN'] === '8717673663:AAHjYB3DVh2EqZN_ZOOC3JcV4MC_V85UpXw') {
     die("\n\n[!] INCORRECT BOT TOKEN! [!]\n\n");
 }
 
